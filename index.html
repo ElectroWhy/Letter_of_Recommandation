@@ -5,40 +5,210 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Letter of Recommendation - Bogdan Sovea Paul</title>
   <style>
-    body{max-width:820px;margin:60px auto;padding:0 18px;font-family:Georgia,serif;line-height:1.8;color:#222}
-    h1{text-align:center;margin-bottom:0}
-    .meta{margin:24px 0 40px 0;color:#555}
-    .signature{margin-top:60px}
-    .small{color:#555;font-size:0.95rem}
+    :root{
+      --orange:#f57c00;
+      --orange2:#ff9f1a;
+      --gray900:#1f2937;
+      --gray700:#374151;
+      --gray200:#e5e7eb;
+      --gray100:#f3f4f6;
+      --paper:#ffffff;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,var(--gray100),#ffffff);
+      font-family: Georgia, serif;
+      color:var(--gray900);
+      line-height:1.8;
+    }
+
+    /* Page frame */
+    .wrap{
+      max-width: 920px;
+      margin: 40px auto 80px;
+      padding: 0 18px;
+    }
+
+    /* Header */
+    .hero{
+      border-radius: 18px;
+      overflow:hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,.08);
+      border:1px solid var(--gray200);
+      background:
+        linear-gradient(135deg, var(--orange) 0%, var(--orange2) 40%, var(--gray900) 40%, var(--gray900) 100%);
+    }
+    .hero-inner{
+      padding: 26px 26px 22px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,0));
+    }
+    .hero-top{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+    .badge{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-size:12px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      background: rgba(255,255,255,.14);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.22);
+    }
+    .hero h1{
+      margin:10px 0 6px;
+      font-size: 34px;
+      line-height:1.2;
+      color:#fff;
+      letter-spacing:.2px;
+    }
+    .hero .sub{
+      margin:0;
+      color: rgba(255,255,255,.85);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-size: 15px;
+    }
+
+    /* Decorative lines */
+    .stripe{
+      height:10px;
+      background:
+        repeating-linear-gradient(
+          90deg,
+          rgba(255,255,255,.35) 0px,
+          rgba(255,255,255,.35) 14px,
+          rgba(255,255,255,.0) 14px,
+          rgba(255,255,255,.0) 24px
+        );
+      opacity:.55;
+    }
+
+    /* Card */
+    .card{
+      margin-top: 22px;
+      background: var(--paper);
+      border:1px solid var(--gray200);
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.06);
+      overflow:hidden;
+    }
+    .card-inner{
+      padding: 28px 28px 22px;
+    }
+
+    /* Meta row */
+    .meta{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+      padding: 16px 28px;
+      background: linear-gradient(180deg,#fff,var(--gray100));
+      border-bottom:1px solid var(--gray200);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--gray700);
+      font-size: 14px;
+    }
+    .meta strong{color:var(--gray900)}
+    .dot{
+      width:6px;height:6px;border-radius:50%;
+      background: var(--orange);
+      display:inline-block;
+      margin: 0 10px;
+      transform: translateY(-1px);
+    }
+
+    /* Section divider line */
+    .rule{
+      height:1px;
+      background: linear-gradient(90deg, transparent, var(--gray200), transparent);
+      margin: 22px 0;
+    }
+
+    /* Signature */
+    .signature{
+      margin-top: 26px;
+      padding-top: 10px;
+    }
+    .sig-line{
+      height:1px;
+      background: var(--gray200);
+      margin: 18px 0 12px;
+    }
+    .small{color:var(--gray700);font-size:0.95rem}
+
+    a{color:var(--orange);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* Print friendliness */
+    @media print{
+      body{background:#fff}
+      .wrap{margin:0}
+      .hero{box-shadow:none}
+      .card{box-shadow:none}
+    }
   </style>
 </head>
+
 <body>
-  <h1>Letter of Recommendation</h1>
-  <div class="meta">
-    <div><strong>Candidate:</strong> Bogdan Sovea Paul</div>
-    <div><strong>Date:</strong> <span class="small">(replace with date)</span></div>
-  </div>
+  <div class="wrap">
 
-  <p>To whom it may concern,</p>
+    <!-- COLOR HEADER -->
+    <header class="hero">
+      <div class="hero-inner">
+        <div class="hero-top">
+          <span class="badge">Letter of Recommendation</span>
+          <span class="badge">Professional Reference</span>
+        </div>
+        <h1>Bogdan Sovea Paul</h1>
+        <p class="sub">Electronics • Maintenance • IT Support</p>
+      </div>
+      <div class="stripe"></div>
+    </header>
 
-  <p>
-    I am pleased to recommend <strong>Bogdan Sovea Paul</strong> for technical roles in
-    electronics, maintenance, or IT support. He demonstrates strong analytical skills,
-    hands-on troubleshooting ability, and disciplined execution in operational environments.
-  </p>
+    <!-- CONTENT CARD -->
+    <main class="card">
+      <div class="meta">
+        <div><strong>Candidate:</strong> Bogdan Sovea Paul</div>
+        <span class="dot"></span>
+        <div><strong>Date:</strong> (replace with date)</div>
+      </div>
 
-  <p>
-    Bogdan works methodically, communicates clearly, and learns quickly. He is dependable
-    under pressure and consistently focuses on root cause and long-term fixes.
-  </p>
+      <div class="card-inner">
+        <p>To whom it may concern,</p>
 
-  <p>Sincerely,</p>
+        <p>
+          I am pleased to recommend <strong>Bogdan Sovea Paul</strong> for technical roles in
+          electronics, maintenance, or IT support. He demonstrates strong analytical skills,
+          hands-on troubleshooting ability, and disciplined execution in operational environments.
+        </p>
 
-  <div class="signature">
-    <p>______________________________</p>
-    <p><strong>Name Surname</strong></p>
-    <p class="small">Title / Company</p>
-    <p class="small">Email / Phone (optional)</p>
+        <p>
+          Bogdan works methodically, communicates clearly, and learns quickly. He is dependable
+          under pressure and consistently focuses on root cause and long-term fixes.
+        </p>
+
+        <div class="rule"></div>
+
+        <p>Sincerely,</p>
+
+        <div class="signature">
+          <div class="sig-line"></div>
+          <p><strong>Name Surname</strong></p>
+          <p class="small">Title / Company</p>
+          <p class="small">Email / Phone (optional)</p>
+        </div>
+      </div>
+    </main>
+
   </div>
 </body>
 </html>
